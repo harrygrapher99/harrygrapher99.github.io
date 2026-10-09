@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Politique de confidentialite de l'application BonPlan, editee par Tatbikat free, conforme a la loi marocaine 09-08.">
+<meta name="robots" content="index, follow">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Confidentialité BonPlan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  /* Colonne de lecture unique, index collant à partir de 900px.
+     Palette reprise de l'app : orange du logo, bleu marine du titre. */
+  :root {
+    --bg:        #fbf9f6;
+    --surface:   #ffffff;
+    --fg:        #16202e;
+    --fg-soft:   #55606f;
+    --rule:      #e4ded5;
+    --accent:    #e8590c;
+    --navy:      #0d2440;
+    --warn-bg:   #fff4e6;
+    --warn-fg:   #9a3412;
+    --warn-rule: #f0a868;
+    --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #12151a;
+      --surface:   #1a1f27;
+      --fg:        #e9e6e1;
+      --fg-soft:   #9aa3af;
+      --rule:      #2c333d;
+      --accent:    #ff8a4c;
+      --navy:      #cfe0f5;
+      --warn-bg:   #2d1f12;
+      --warn-fg:   #ffb380;
+      --warn-rule: #7a4a1e;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #12151a;
+    --surface:   #1a1f27;
+    --fg:        #e9e6e1;
+    --fg-soft:   #9aa3af;
+    --rule:      #2c333d;
+    --accent:    #ff8a4c;
+    --navy:      #cfe0f5;
+    --warn-bg:   #2d1f12;
+    --warn-fg:   #ffb380;
+    --warn-rule: #7a4a1e;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------------------------------------------------------- en-tête */
+  header.masthead {
+    border-bottom: 2px solid var(--rule);
+    padding-block: 44px 28px;
+    margin-bottom: 32px;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--navy);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .maj {
+    font-size: 14px;
+    color: var(--fg-soft);
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------- à compléter */
+  .todo {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-rule);
+    border-left: 4px solid var(--warn-rule);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    color: var(--warn-fg);
+  }
+  .todo h2 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--warn-fg);
+  }
+  .todo p { margin: 0 0 10px; font-size: 14.5px; }
+  .todo ul { margin: 0; padding-left: 20px; font-size: 14.5px; }
+  .todo li { margin-bottom: 4px; }
+
+  mark.ph {
+    background: var(--warn-bg);
+    color: var(--warn-fg);
+    border: 1px dashed var(--warn-rule);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .88em;
+    white-space: nowrap;
+  }
+
+  /* --------------------------------------------------------- structure */
+  .cols { display: grid; gap: 40px; }
+  @media (min-width: 900px) {
+    .cols { grid-template-columns: 210px minmax(0, 1fr); gap: 56px; }
+    nav.toc {
+      position: sticky;
+      top: calc(env(safe-area-inset-top, 0px) + 28px);
+      align-self: start;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0; padding: 0;
+    counter-reset: toc;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  nav.toc li { counter-increment: toc; margin-bottom: 9px; }
+  nav.toc a {
+    color: var(--fg-soft);
+    text-decoration: none;
+    display: block;
+    padding-left: 26px;
+    position: relative;
+  }
+  nav.toc a::before {
+    content: counter(toc);
+    position: absolute; left: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); }
+
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+  h2.sec {
+    font-family: var(--font-display);
+    font-size: clamp(19px, 3.4vw, 24px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--navy);
+    margin: 0 0 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  h2.sec .num {
+    color: var(--accent);
+    font-size: .72em;
+    margin-right: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 24px 0 6px;
+    color: var(--fg);
+  }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  ul.plain { margin: 0 0 14px; padding-left: 22px; max-width: 68ch; }
+  ul.plain li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+
+  /* ----------------------------------------------------------- tableaux */
+  .scroll { overflow-x: auto; margin: 0 0 18px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 440px;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--font-display);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fg-soft);
+    border-bottom-width: 2px;
+  }
+  td:first-child { font-weight: 500; padding-right: 20px; }
+
+  /* ---------------------------------------------------------- avertissement */
+  .alerte {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .alerte p { margin: 0; }
+  .alerte strong { color: var(--accent); }
+
+  footer.pied {
+    border-top: 2px solid var(--rule);
+    padding-top: 22px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--fg-soft);
+  }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">BonPlan · Les bons plans près de chez vous</p>
+    <h1>Politique de confidentialité</h1>
+    <p class="maj">Dernière mise à jour : 8 octobre 2026</p>
+  </header>
+
+  <div class="todo">
+    <h2>À compléter avant publication</h2>
+    <p>Cette page est prête, mais quatre mentions obligatoires manquent. Une politique
+      sans responsable identifiable n'a aucune valeur juridique, et les stores la rejettent.</p>
+    <ul>
+      <li><strong>Tatbikat free</strong> — ton nom complet ou celui de ta société</li>
+      <li>Rabat — l'adresse postale de l'éditeur</li>
+      <li><a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a> — une adresse réellement relevée</li>
+      <li><mark class="ph">N° CNDP</mark> — le récépissé de déclaration à la CNDP</li>
+    </ul>
+  </div>
+
+  <div class="cols">
+    <nav class="toc" aria-label="Sommaire">
+      <ol>
+        <li><a href="#responsable">Qui est responsable</a></li>
+        <li><a href="#donnees">Les données collectées</a></li>
+        <li><a href="#publicite">La publicité</a></li>
+        <li><a href="#hebergement">Où sont tes données</a></li>
+        <li><a href="#acces">Qui voit quoi</a></li>
+        <li><a href="#duree">Durées de conservation</a></li>
+        <li><a href="#droits">Tes droits</a></li>
+        <li><a href="#securite">Sécurité</a></li>
+        <li><a href="#mineurs">Les mineurs</a></li>
+        <li><a href="#modifs">Modifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="responsable">
+        <h2 class="sec"><span class="num">01</span>Qui est responsable de tes données</h2>
+        <p>L'application <strong>BonPlan</strong> est éditée par <strong>Tatbikat free</strong>,
+          Rabat, Maroc.</p>
+        <p>Pour toute question relative à tes données personnelles :
+          <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
+        <p>Le traitement est déclaré auprès de la <strong>Commission Nationale de contrôle de
+          la protection des Données à caractère Personnel (CNDP)</strong> sous le numéro
+          <mark class="ph">N° CNDP</mark>, conformément à la <strong>loi 09-08</strong> relative
+          à la protection des personnes physiques à l'égard du traitement des données à
+          caractère personnel.</p>
+      </section>
+
+      <section id="donnees">
+        <h2 class="sec"><span class="num">02</span>Les données que nous collectons</h2>
+
+        <h3>Quand tu crées un compte</h3>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Donnée</th><th>Visibilité</th><th>Pourquoi</th></tr></thead>
+            <tbody>
+              <tr><td>Adresse e-mail</td><td>Privée</td><td>Créer le compte, te connecter, réinitialiser ton mot de passe</td></tr>
+              <tr><td>Mot de passe</td><td>Jamais lisible</td><td>Stocké sous forme chiffrée irréversible ; nous ne pouvons pas le lire</td></tr>
+              <tr><td>Pseudo</td><td>Public</td><td>T'identifier auprès des autres membres</td></tr>
+              <tr><td>Ville</td><td>Publique</td><td>Adapter le fil à ta région</td></tr>
+              <tr><td>Photo de profil</td><td>Publique</td><td>Facultative</td></tr>
+              <tr><td>Présentation</td><td>Publique</td><td>Facultative</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Quand tu publies un bon plan</h3>
+        <p>Tout ce que tu publies est <strong>public</strong> et visible par tous, y compris
+          par les visiteurs non inscrits :</p>
+        <ul class="plain">
+          <li>Le nom du lieu, son adresse, son quartier</li>
+          <li>Les coordonnées GPS du lieu</li>
+          <li>Le numéro de téléphone du commerce, si tu le renseignes</li>
+          <li>Ton titre, ton avis, ta note, le prix indiqué</li>
+          <li>Les photos que tu ajoutes</li>
+          <li>La date de publication et ton pseudo</li>
+        </ul>
+
+        <div class="alerte">
+          <p><strong>Important concernant la position.</strong> Lorsque tu utilises le bouton
+            de localisation automatique, l'application enregistre la position de ton téléphone
+            à cet instant comme étant celle du lieu. Si tu publies depuis ton domicile ou ton
+            travail, ces coordonnées deviennent publiques. Vérifie et corrige toujours
+            l'adresse avant de publier.</p>
+        </div>
+
+        <h3>Quand tu utilises l'application</h3>
+        <ul class="plain">
+          <li><strong>Tes votes</strong> : publics, associés à ton compte</li>
+          <li><strong>Tes commentaires</strong> : publics</li>
+          <li><strong>Tes favoris</strong> : privés, visibles de toi seul</li>
+          <li><strong>Tes signalements</strong> : le motif, ton commentaire éventuel et ton
+            identifiant sont conservés et consultables par la modération</li>
+        </ul>
+
+        <h3>Ta position géographique</h3>
+        <p>L'application demande l'accès à ta position pour deux usages :</p>
+        <ul class="plain">
+          <li><strong>Trier les bons plans « autour de toi »</strong> — la position est utilisée
+            sur le moment pour calculer les distances, puis n'est pas conservée.</li>
+          <li><strong>Pré-remplir la localisation d'un bon plan</strong> — dans ce cas, et dans
+            ce cas seulement, la position est enregistrée et rendue publique.</li>
+        </ul>
+        <p>La précision demandée est moyenne, pas maximale. Tu peux refuser cet accès :
+          l'application reste utilisable, tu devras simplement saisir les adresses à la main.</p>
+
+        <h3>Tes photos</h3>
+        <p>Les photos sont réencodées par l'application avant tout envoi. Cette opération
+          supprime les métadonnées du fichier d'origine, y compris les éventuelles coordonnées
+          GPS enregistrées par ton appareil photo.</p>
+
+        <h3>Ce qui reste sur ton téléphone</h3>
+        <p>La ville que tu consultes est mémorisée localement, sur ton appareil uniquement.
+          Cette information ne nous est jamais transmise.</p>
+      </section>
+
+      <section id="publicite">
+        <h2 class="sec"><span class="num">03</span>La publicité</h2>
+        <p>L'application affiche des bannières publicitaires fournies par <strong>Google
+          AdMob</strong>. Pour sélectionner les annonces, Google peut collecter et traiter :</p>
+        <ul class="plain">
+          <li>L'identifiant publicitaire de ton appareil</li>
+          <li>Le modèle de ton appareil, sa version d'Android, sa langue</li>
+          <li>Ton adresse IP et la localisation approximative qui en découle</li>
+          <li>Tes interactions avec les annonces</li>
+        </ul>
+        <p>Nous ne transmettons à Google <strong>ni ton e-mail, ni ton pseudo, ni tes
+          publications, ni ta position GPS précise</strong>.</p>
+        <p><strong>Tu gardes la main.</strong> Sur Android : <em>Paramètres → Google →
+          Annonces</em>, où tu peux réinitialiser ton identifiant publicitaire ou désactiver
+          la personnalisation.</p>
+        <p>Les règles de Google s'appliquent en complément des nôtres :
+          <a href="https://policies.google.com/technologies/ads">policies.google.com/technologies/ads</a></p>
+      </section>
+
+      <section id="hebergement">
+        <h2 class="sec"><span class="num">04</span>Où sont hébergées tes données</h2>
+        <p>Les données sont hébergées par <strong>Supabase</strong>, sur une infrastructure
+          située en <strong>Irlande (Union européenne)</strong>. Elles sortent donc du
+          territoire marocain.</p>
+        <p>Ce transfert est nécessaire au fonctionnement du service, et l'Union européenne
+          offre un niveau de protection reconnu comme adéquat.</p>
+      </section>
+
+      <section id="acces">
+        <h2 class="sec"><span class="num">05</span>Qui peut voir quoi</h2>
+        <ul class="plain">
+          <li>Les autres membres et les visiteurs voient tout ce qui est marqué « public »
+            ci-dessus.</li>
+          <li>L'éditeur peut accéder à l'ensemble des données pour assurer le fonctionnement
+            du service et la modération.</li>
+          <li><strong>Nous ne vendons aucune donnée</strong> et ne les communiquons à aucun
+            tiers à des fins commerciales.</li>
+          <li>Une communication n'est possible qu'à la demande d'une autorité judiciaire
+            marocaine compétente.</li>
+        </ul>
+      </section>
+
+      <section id="duree">
+        <h2 class="sec"><span class="num">06</span>Combien de temps nous les conservons</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Donnée</th><th>Durée</th></tr></thead>
+            <tbody>
+              <tr><td>Compte et profil</td><td>Tant que le compte existe</td></tr>
+              <tr><td>Bons plans, commentaires, votes</td><td>Tant que le compte existe, sauf suppression par toi</td></tr>
+              <tr><td>Bons plans retirés par la modération</td><td>12 mois, puis suppression</td></tr>
+              <tr><td>Signalements</td><td>12 mois après traitement</td></tr>
+              <tr><td>Position « autour de moi »</td><td>Non conservée</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>À la suppression de ton compte, tes données personnelles sont effacées dans un
+          délai de <strong>30 jours</strong>.</p>
+      </section>
+
+      <section id="droits">
+        <h2 class="sec"><span class="num">07</span>Tes droits</h2>
+        <p>La loi 09-08 te garantit un droit <strong>d'accès</strong>, de
+          <strong>rectification</strong>, <strong>d'opposition</strong> et de
+          <strong>suppression</strong> de tes données.</p>
+        <p>Tu peux exercer l'essentiel de ces droits directement dans l'application :
+          modifier ton profil, supprimer tes bons plans et tes commentaires.</p>
+        <p>Pour toute autre demande — et notamment la suppression de ton compte — écris à
+          <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a>. Nous répondons sous 30 jours.</p>
+        <p>En cas de désaccord, tu peux saisir la CNDP : <a href="https://www.cndp.ma">cndp.ma</a></p>
+      </section>
+
+      <section id="securite">
+        <h2 class="sec"><span class="num">08</span>Sécurité</h2>
+        <ul class="plain">
+          <li>Les échanges entre l'application et nos serveurs sont chiffrés (HTTPS).</li>
+          <li>Les mots de passe sont stockés sous forme d'empreinte irréversible.</li>
+          <li>L'accès aux données est cloisonné par des règles appliquées directement par la
+            base de données : un membre ne peut modifier que ce qui lui appartient.</li>
+        </ul>
+        <p>Aucun système n'est infaillible. En cas de violation de données susceptible
+          d'engendrer un risque pour toi, nous t'en informerons et préviendrons la CNDP.</p>
+      </section>
+
+      <section id="mineurs">
+        <h2 class="sec"><span class="num">09</span>Les mineurs</h2>
+        <p>BonPlan n'est pas destinée aux enfants de moins de <strong>13 ans</strong>. Nous ne
+          collectons pas sciemment leurs données. Si tu constates qu'un compte a été créé par
+          un enfant de moins de 13 ans, signale-le à <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a> :
+          il sera supprimé.</p>
+      </section>
+
+      <section id="modifs">
+        <h2 class="sec"><span class="num">10</span>Modifications</h2>
+        <p>Cette politique peut évoluer, notamment si l'application change ce qu'elle collecte.
+          La date en tête de page indique la dernière révision. En cas de changement important,
+          nous t'en informerons dans l'application.</p>
+      </section>
+
+      <section id="contact">
+        <h2 class="sec"><span class="num">11</span>Contact</h2>
+        <p><strong>Tatbikat free</strong> — <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
+      </section>
+
+      <footer class="pied">
+        <p>BonPlan — Les bonnes adresses trouvées par les Marocains, ville par ville.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>
