@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Politique de confidentialité de l'application Hanout, carnet de crédit pour épiceries, éditée par Tatbikat free, conforme à la loi marocaine 09-08.">
+<meta name="robots" content="index, follow">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Confidentialité Hanout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap">
+<style>
+  /* Colonne de lecture unique, index collant à partir de 900px.
+     Palette reprise de l'app : vert menthe de la marque, rouge du crédit. */
+  :root {
+    --bg:        #f7f9f7;
+    --surface:   #ffffff;
+    --fg:        #15211c;
+    --fg-soft:   #56635d;
+    --rule:      #dde5e0;
+    --accent:    #0f7b5f;
+    --ink:       #0b3b2e;
+    --credit:    #c62828;
+    --warn-bg:   #fff4e6;
+    --warn-fg:   #9a3412;
+    --warn-rule: #f0a868;
+    --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-ar: 'Noto Kufi Arabic', 'Geeza Pro', Tahoma, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #101614;
+      --surface:   #18201d;
+      --fg:        #e5ece8;
+      --fg-soft:   #9aa8a1;
+      --rule:      #2a3531;
+      --accent:    #4fc8a2;
+      --ink:       #c8eadb;
+      --credit:    #ff8a80;
+      --warn-bg:   #2d1f12;
+      --warn-fg:   #ffb380;
+      --warn-rule: #7a4a1e;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #101614;
+    --surface:   #18201d;
+    --fg:        #e5ece8;
+    --fg-soft:   #9aa8a1;
+    --rule:      #2a3531;
+    --accent:    #4fc8a2;
+    --ink:       #c8eadb;
+    --credit:    #ff8a80;
+    --warn-bg:   #2d1f12;
+    --warn-fg:   #ffb380;
+    --warn-rule: #7a4a1e;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------------------------------------------------------- en-tête */
+  header.masthead {
+    border-bottom: 2px solid var(--rule);
+    padding-block: 44px 28px;
+    margin-bottom: 32px;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .maj {
+    font-size: 14px;
+    color: var(--fg-soft);
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------- à compléter */
+  .todo {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-rule);
+    border-left: 4px solid var(--warn-rule);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    color: var(--warn-fg);
+  }
+  .todo h2 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--warn-fg);
+  }
+  .todo p { margin: 0 0 10px; font-size: 14.5px; }
+  .todo ul { margin: 0; padding-left: 20px; font-size: 14.5px; }
+  .todo li { margin-bottom: 4px; }
+
+  /* ------------------------------------------------- en bref, en arabe */
+  .resume {
+    display: grid;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    margin-bottom: 44px;
+    overflow: hidden;
+  }
+  @media (min-width: 760px) { .resume { grid-template-columns: 1fr 1fr; } }
+  .resume > div { padding: 20px 22px; }
+  .resume > div + div { border-top: 1px solid var(--rule); }
+  @media (min-width: 760px) {
+    .resume > div + div { border-top: 0; border-left: 1px solid var(--rule); }
+  }
+  .resume h2 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .resume ul { margin: 0; padding-left: 20px; font-size: 15px; }
+  .resume li { margin-bottom: 6px; }
+  .resume [dir="rtl"] { font-family: var(--font-ar); line-height: 1.9; }
+  .resume [dir="rtl"] h2 { font-family: var(--font-ar); letter-spacing: 0; text-transform: none; font-size: 15px; }
+  .resume [dir="rtl"] ul { padding-left: 0; padding-right: 20px; }
+
+  /* --------------------------------------------------------- structure */
+  .cols { display: grid; gap: 40px; }
+  /* Sans min-width: 0, un tableau large élargit la colonne et la page déborde
+     sur mobile au lieu de faire défiler le tableau seul. */
+  .cols > *, .resume > * { min-width: 0; }
+  @media (min-width: 900px) {
+    .cols { grid-template-columns: 210px minmax(0, 1fr); gap: 56px; }
+    nav.toc {
+      position: sticky;
+      top: calc(env(safe-area-inset-top, 0px) + 28px);
+      align-self: start;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0; padding: 0;
+    counter-reset: toc;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  nav.toc li { counter-increment: toc; margin-bottom: 9px; }
+  nav.toc a {
+    color: var(--fg-soft);
+    text-decoration: none;
+    display: block;
+    padding-left: 26px;
+    position: relative;
+  }
+  nav.toc a::before {
+    content: counter(toc);
+    position: absolute; left: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); }
+
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+  h2.sec {
+    font-family: var(--font-display);
+    font-size: clamp(19px, 3.4vw, 24px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--ink);
+    margin: 0 0 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  h2.sec .num {
+    color: var(--accent);
+    font-size: .72em;
+    margin-right: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 24px 0 6px;
+    color: var(--fg);
+  }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  ul.plain { margin: 0 0 14px; padding-left: 22px; max-width: 68ch; }
+  ul.plain li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+
+  /* ----------------------------------------------------------- tableaux */
+  .scroll { overflow-x: auto; margin: 0 0 18px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 440px;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--font-display);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fg-soft);
+    border-bottom-width: 2px;
+  }
+  td:first-child { font-weight: 500; padding-right: 20px; }
+
+  /* ---------------------------------------------------------- avertissement */
+  .alerte {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--credit);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .alerte p { margin: 0; }
+  .alerte strong { color: var(--credit); }
+
+  footer.pied {
+    border-top: 2px solid var(--rule);
+    padding-top: 22px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--fg-soft);
+  }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Hanout · الحانوت · Le carnet de crédit du hanout</p>
+    <h1>Politique de confidentialité</h1>
+    <p class="maj">Dernière mise à jour : 23 octobre 2026</p>
+  </header>
+
+  <div class="todo">
+    <h2>À compléter avant publication</h2>
+    <p>La page est prête. Vérifie ces points avant de mettre son adresse sur le Play Store :</p>
+    <ul>
+      <li><strong>Tatbikat free</strong>, Rabat — nom de l'éditeur et adresse postale, repris de BonPlan</li>
+      <li><a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a> — une adresse réellement relevée</li>
+      <li>Section 5 : la copie automatique Android (Google) est active par défaut dans l'app. La garder, ou la couper
+        (<code>android:allowBackup="false"</code>) et retirer ce paragraphe.</li>
+      <li>Sections 5 et 9 : à mettre à jour quand la sauvegarde sera chiffrée et le code PIN disponible.</li>
+      <li>Section 7 : préciser la durée de la corbeille quand son vidage sera disponible.</li>
+    </ul>
+  </div>
+
+  <div class="resume">
+    <div>
+      <h2>En bref</h2>
+      <ul>
+        <li>Tout reste <strong>sur ton téléphone</strong>. Pas de compte, pas de serveur.</li>
+        <li>L'application n'a <strong>même pas accès à internet</strong>.</li>
+        <li>Pas de publicité, pas de statistiques, pas de traceurs.</li>
+        <li>Une donnée ne sort du téléphone que si <strong>tu l'envoies toi-même</strong> :
+          relevé WhatsApp ou fichier de sauvegarde.</li>
+      </ul>
+    </div>
+    <div dir="rtl" lang="ar">
+      <h2>باختصار</h2>
+      <ul>
+        <li>كلشي كيبقى <strong>فالتيليفون ديالك</strong>. ما كاين لا حساب لا سيرفور.</li>
+        <li>التطبيق <strong>ما عندوش حتى الحق يدخل للأنترنيت</strong>.</li>
+        <li>ما كاين لا إشهار، لا إحصائيات، لا تتبع.</li>
+        <li>حتى معلومة ما كتخرج من التيليفون إلا <strong>صيفطتيها نتا</strong>:
+          الحساب فواتساب ولا النسخة الاحتياطية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cols">
+    <nav class="toc" aria-label="Sommaire">
+      <ol>
+        <li><a href="#responsable">Qui est responsable</a></li>
+        <li><a href="#donnees">Ce que l'app enregistre</a></li>
+        <li><a href="#rien">Ce que nous ne collectons pas</a></li>
+        <li><a href="#autorisations">Les autorisations</a></li>
+        <li><a href="#sortie">Quand des données sortent</a></li>
+        <li><a href="#clients">Les données de tes clients</a></li>
+        <li><a href="#duree">Durées de conservation</a></li>
+        <li><a href="#droits">Tes droits</a></li>
+        <li><a href="#securite">Sécurité</a></li>
+        <li><a href="#mineurs">Les mineurs</a></li>
+        <li><a href="#modifs">Modifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="responsable">
+        <h2 class="sec"><span class="num">01</span>Qui est responsable</h2>
+        <p>L'application <strong>Hanout</strong> est éditée par <strong>Tatbikat free</strong>,
+          Rabat, Maroc. Contact : <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
+        <p>Hanout fonctionne entièrement hors ligne : <strong>l'éditeur ne reçoit, ne stocke et ne
+          voit aucune des données</strong> saisies dans l'application. Il n'existe aucun serveur
+          Hanout où elles pourraient se trouver.</p>
+        <p>C'est toi, commerçant, qui choisis ce que tu notes sur tes clients. Au sens de la
+          <strong>loi 09-08</strong> relative à la protection des personnes physiques à l'égard du
+          traitement des données à caractère personnel, tu es donc le responsable de ces données
+          (voir la <a href="#clients">section 6</a>).</p>
+      </section>
+
+      <section id="donnees">
+        <h2 class="sec"><span class="num">02</span>Ce que l'application enregistre</h2>
+        <p>Tout est enregistré <strong>uniquement dans la mémoire privée de l'application, sur ton
+          téléphone</strong>. Aucune autre application ne peut y accéder.</p>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Donnée</th><th>Obligatoire</th><th>Pourquoi</th></tr></thead>
+            <tbody>
+              <tr><td>Nom du client</td><td>Oui</td><td>Retrouver son compte</td></tr>
+              <tr><td>Téléphone du client</td><td>Non</td><td>L'appeler, lui envoyer son relevé</td></tr>
+              <tr><td>Quartier ou adresse</td><td>Non</td><td>Distinguer deux clients du même nom</td></tr>
+              <tr><td>Note libre, plafond de crédit</td><td>Non</td><td>Tes repères personnels</td></tr>
+              <tr><td>Crédits et paiements : montant, date, description</td><td>Montant et date</td><td>Tenir le compte et calculer le solde</td></tr>
+              <tr><td>Photos des achats</td><td>Non</td><td>Se souvenir de ce qui a été pris (marchandise, ticket)</td></tr>
+              <tr><td>Nom du hanout, langue, thème</td><td>Non</td><td>Réglages de l'application</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Les photos</h3>
+        <p>Les photos prises depuis Hanout sont compressées et rangées dans le dossier privé de
+          l'application. Elles <strong>n'apparaissent pas dans la galerie</strong> du téléphone.
+          Quand tu choisis une photo depuis la galerie, Hanout en garde une copie ; l'original
+          reste dans ta galerie.</p>
+      </section>
+
+      <section id="rien">
+        <h2 class="sec"><span class="num">03</span>Ce que nous ne collectons pas</h2>
+        <ul class="plain">
+          <li><strong>Aucun compte</strong> : ni e-mail, ni mot de passe, ni numéro de téléphone du commerçant.</li>
+          <li><strong>Aucune connexion à internet</strong> : l'application ne déclare pas cette
+            autorisation auprès d'Android. Elle ne peut rien envoyer, même en arrière-plan.</li>
+          <li><strong>Aucune publicité</strong>, donc aucun identifiant publicitaire.</li>
+          <li><strong>Aucune statistique d'utilisation</strong>, aucun rapport de plantage,
+            aucun outil de mesure d'audience.</li>
+          <li><strong>Aucune position</strong>, aucun accès aux contacts du téléphone.</li>
+        </ul>
+        <p>Nous ne vendons ni ne communiquons aucune donnée, puisque nous n'en détenons aucune.</p>
+      </section>
+
+      <section id="autorisations">
+        <h2 class="sec"><span class="num">04</span>Les autorisations</h2>
+        <p>Hanout ne demande <strong>aucune autorisation sensible</strong> à Android. Il passe
+          par les outils du système, qui ne lui donnent accès qu'à ce que tu choisis :</p>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Action</th><th>Comment</th></tr></thead>
+            <tbody>
+              <tr><td>Prendre une photo</td><td>Ouvre l'application Appareil photo du téléphone ; Hanout ne reçoit que la photo validée</td></tr>
+              <tr><td>Choisir une photo</td><td>Sélecteur d'Android ; Hanout ne voit que la photo choisie, pas le reste de la galerie</td></tr>
+              <tr><td>Restaurer une sauvegarde</td><td>Sélecteur de fichiers d'Android ; Hanout ne lit que le fichier choisi</td></tr>
+              <tr><td>Appeler un client</td><td>Ouvre le composeur avec le numéro ; c'est toi qui lances l'appel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sortie">
+        <h2 class="sec"><span class="num">05</span>Quand des données sortent du téléphone</h2>
+        <p>Cela n'arrive que dans les cas suivants, toujours à ton initiative ou selon les
+          réglages de ton téléphone.</p>
+
+        <h3>L'envoi d'un relevé</h3>
+        <p>Le bouton « Envoyer le relevé » prépare un message avec le nom du client, le nom du
+          hanout et le solde, puis ouvre <strong>WhatsApp</strong> (ou l'application que tu
+          choisis). Le message n'est envoyé que si tu appuies sur Envoyer. Il est ensuite soumis
+          aux règles de cette application.</p>
+
+        <h3>L'envoi d'une sauvegarde</h3>
+        <p>« Envoyer une sauvegarde » crée un fichier <code>.zip</code> contenant <strong>tous
+          tes clients, toutes les opérations et toutes les photos</strong>, puis te laisse choisir
+          où l'envoyer : Google Drive, WhatsApp, e-mail… Le fichier est alors conservé par le
+          service que tu as choisi, selon ses propres règles.</p>
+        <div class="alerte">
+          <p><strong>Le fichier de sauvegarde n'est pas chiffré.</strong> Toute personne qui
+            l'obtient peut lire les comptes de tes clients. Envoie-le seulement vers un espace qui
+            t'appartient (ton Google Drive, ta propre conversation WhatsApp), jamais dans un groupe.</p>
+        </div>
+
+        <h3>La copie automatique d'Android</h3>
+        <p>Si la sauvegarde Google est activée sur ton téléphone (<em>Paramètres → Système →
+          Sauvegarde</em>), Android peut copier les données de Hanout dans <strong>ton compte
+          Google</strong>, chiffrées par Google, pour les retrouver sur un nouveau téléphone. Cette
+          copie est gérée par Google et par toi ; l'éditeur de Hanout n'y a pas accès. Tu peux la
+          désactiver dans les paramètres d'Android.</p>
+
+        <h3>Les sauvegardes automatiques de l'application</h3>
+        <p>Une fois par jour, Hanout fait aussi une copie de sécurité <strong>sur le téléphone
+          même</strong>, dans son dossier privé (les 7 dernières sont gardées). Elles ne quittent
+          pas le téléphone.</p>
+      </section>
+
+      <section id="clients">
+        <h2 class="sec"><span class="num">06</span>Les données de tes clients</h2>
+        <p>Les noms, numéros, montants dus et photos que tu enregistres concernent d'autres
+          personnes. Quelques bonnes pratiques :</p>
+        <ul class="plain">
+          <li><strong>Préviens tes clients</strong> que tu tiens leur compte sur ton téléphone,
+            comme tu le ferais sur le carnet.</li>
+          <li><strong>Ne note que l'utile</strong> : un nom et le montant suffisent. Le téléphone,
+            l'adresse et les photos sont facultatifs.</li>
+          <li>Évite de photographier les personnes : photographie la marchandise ou le ticket.</li>
+          <li>Si un client te demande ce que tu as noté sur lui, montre-lui sa fiche ou
+            envoie-lui son relevé.</li>
+          <li>Ne partage pas le relevé d'un client avec quelqu'un d'autre que lui.</li>
+        </ul>
+      </section>
+
+      <section id="duree">
+        <h2 class="sec"><span class="num">07</span>Combien de temps les données sont gardées</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Donnée</th><th>Durée</th></tr></thead>
+            <tbody>
+              <tr><td>Clients, opérations, photos</td><td>Tant que tu ne les supprimes pas, ou jusqu'à la désinstallation</td></tr>
+              <tr><td>Opérations supprimées</td><td>Gardées dans la corbeille de l'application</td></tr>
+              <tr><td>Sauvegardes automatiques sur le téléphone</td><td>Les 7 dernières, les plus anciennes sont effacées</td></tr>
+              <tr><td>Fichiers de sauvegarde que tu as envoyés</td><td>Selon ce que tu en fais : ils sont hors de l'application</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Désinstaller Hanout efface toutes ses données</strong> du téléphone. Seuls
+          restent les fichiers de sauvegarde que tu as envoyés ailleurs, et la copie Android dans
+          ton compte Google si elle est activée.</p>
+      </section>
+
+      <section id="droits">
+        <h2 class="sec"><span class="num">08</span>Tes droits</h2>
+        <p>La loi 09-08 garantit un droit <strong>d'accès</strong>, de
+          <strong>rectification</strong>, <strong>d'opposition</strong> et de
+          <strong>suppression</strong> des données personnelles.</p>
+        <p>Comme l'éditeur ne détient aucune donnée, ces droits s'exercent directement dans
+          l'application : tu peux consulter, modifier, archiver tes clients et supprimer des
+          opérations, ou tout effacer en désinstallant l'application.</p>
+        <p>Les clients du hanout exercent leurs droits auprès du commerçant, qui seul détient
+          leurs données.</p>
+        <p>Pour toute question : <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a>.
+          Nous répondons sous 30 jours. Tu peux aussi saisir la CNDP :
+          <a href="https://www.cndp.ma">cndp.ma</a></p>
+      </section>
+
+      <section id="securite">
+        <h2 class="sec"><span class="num">09</span>Sécurité</h2>
+        <ul class="plain">
+          <li>Les données sont rangées dans l'espace privé de l'application, isolé par Android :
+            les autres applications ne peuvent pas les lire.</li>
+          <li>Avant toute restauration, l'application vérifie le fichier et met de côté une copie
+            de l'état actuel. Un fichier abîmé ne modifie rien.</li>
+          <li>Les montants sont calculés par l'application à partir des opérations, jamais saisis
+            à la main.</li>
+        </ul>
+        <p>La meilleure protection reste <strong>le verrouillage de ton téléphone</strong> (code,
+          schéma ou empreinte) : quiconque a ton téléphone déverrouillé en main peut ouvrir Hanout.</p>
+      </section>
+
+      <section id="mineurs">
+        <h2 class="sec"><span class="num">10</span>Les mineurs</h2>
+        <p>Hanout est un outil de gestion destiné aux commerçants. Il ne s'adresse pas aux
+          enfants et ne collecte aucune donnée sur l'utilisateur, quel que soit son âge.</p>
+      </section>
+
+      <section id="modifs">
+        <h2 class="sec"><span class="num">11</span>Modifications</h2>
+        <p>Cette politique peut évoluer, notamment si l'application change ce qu'elle enregistre
+          ou si une synchronisation en ligne est ajoutée un jour. La date en tête de page indique
+          la dernière révision. Tout changement de ce type sera annoncé dans l'application avant
+          de s'appliquer.</p>
+      </section>
+
+      <section id="contact">
+        <h2 class="sec"><span class="num">12</span>Contact</h2>
+        <p><strong>Tatbikat free</strong> — <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
+      </section>
+
+      <footer class="pied">
+        <p>Hanout — الحانوت. Le carnet de crédit du hanout, sans papier et sans internet.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>
