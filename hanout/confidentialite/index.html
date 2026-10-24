@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Politique de confidentialité de l'application Hanout, carnet de crédit pour épiceries, éditée par Tatbikat free, conforme à la loi marocaine 09-08.">
+<meta name="description" content="Politique de confidentialité de l'application Hanout, carnet de crédit pour épiceries, éditée par Ali Khalil, conforme à la loi marocaine 09-08.">
 <meta name="robots" content="index, follow">
 <style>
   :root { color-scheme: light; }
@@ -289,21 +289,8 @@
   <header class="masthead">
     <p class="eyebrow">Hanout · الحانوت · Le carnet de crédit du hanout</p>
     <h1>Politique de confidentialité</h1>
-    <p class="maj">Dernière mise à jour : 23 octobre 2026</p>
+    <p class="maj">Dernière mise à jour : 24 octobre 2026</p>
   </header>
-
-  <div class="todo">
-    <h2>À compléter avant publication</h2>
-    <p>La page est prête. Vérifie ces points avant de mettre son adresse sur le Play Store :</p>
-    <ul>
-      <li><strong>Tatbikat free</strong>, Rabat — nom de l'éditeur et adresse postale, repris de BonPlan</li>
-      <li><a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a> — une adresse réellement relevée</li>
-      <li>Section 5 : la copie automatique Android (Google) est active par défaut dans l'app. La garder, ou la couper
-        (<code>android:allowBackup="false"</code>) et retirer ce paragraphe.</li>
-      <li>Sections 5 et 9 : à mettre à jour quand la sauvegarde sera chiffrée et le code PIN disponible.</li>
-      <li>Section 7 : préciser la durée de la corbeille quand son vidage sera disponible.</li>
-    </ul>
-  </div>
 
   <div class="resume">
     <div>
@@ -349,7 +336,7 @@
     <main>
       <section id="responsable">
         <h2 class="sec"><span class="num">01</span>Qui est responsable</h2>
-        <p>L'application <strong>Hanout</strong> est éditée par <strong>Tatbikat free</strong>,
+        <p>L'application <strong>Hanout</strong> est éditée par <strong>Ali Khalil</strong>,
           Rabat, Maroc. Contact : <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
         <p>Hanout fonctionne entièrement hors ligne : <strong>l'éditeur ne reçoit, ne stocke et ne
           voit aucune des données</strong> saisies dans l'application. Il n'existe aucun serveur
@@ -440,10 +427,20 @@
 
         <h3>La copie automatique d'Android</h3>
         <p>Si la sauvegarde Google est activée sur ton téléphone (<em>Paramètres → Système →
-          Sauvegarde</em>), Android peut copier les données de Hanout dans <strong>ton compte
-          Google</strong>, chiffrées par Google, pour les retrouver sur un nouveau téléphone. Cette
-          copie est gérée par Google et par toi ; l'éditeur de Hanout n'y a pas accès. Tu peux la
-          désactiver dans les paramètres d'Android.</p>
+          Sauvegarde</em>), Android copie dans <strong>ton compte Google</strong> la liste de tes
+          clients et de leurs opérations, ainsi que les réglages de l'application, pour les
+          retrouver sur un nouveau téléphone.</p>
+        <ul class="plain">
+          <li>Sur Android 12 et plus, cette copie n'est faite que si elle est <strong>chiffrée
+            de bout en bout</strong>, c'est-à-dire si ton téléphone est protégé par un code, un
+            schéma ou un mot de passe : même Google ne peut pas la lire.</li>
+          <li><strong>Les photos des achats n'y sont pas incluses</strong>, pour rester sous la
+            limite de 25 Mo fixée par Google. Elles ne passent d'un téléphone à l'autre que par un
+            transfert direct (câble ou Wi-Fi) lors de la configuration du nouveau téléphone, ou par
+            une sauvegarde Hanout envoyée par toi.</li>
+          <li>Cette copie est gérée par Google et par toi ; l'éditeur de Hanout n'y a pas accès.
+            Tu peux la désactiver dans les paramètres d'Android.</li>
+        </ul>
 
         <h3>Les sauvegardes automatiques de l'application</h3>
         <p>Une fois par jour, Hanout fait aussi une copie de sécurité <strong>sur le téléphone
@@ -474,12 +471,14 @@
             <thead><tr><th>Donnée</th><th>Durée</th></tr></thead>
             <tbody>
               <tr><td>Clients, opérations, photos</td><td>Tant que tu ne les supprimes pas, ou jusqu'à la désinstallation</td></tr>
-              <tr><td>Opérations supprimées</td><td>Gardées dans la corbeille de l'application</td></tr>
-              <tr><td>Sauvegardes automatiques sur le téléphone</td><td>Les 7 dernières, les plus anciennes sont effacées</td></tr>
+              <tr><td>Opérations supprimées</td><td>30 jours dans la corbeille, puis effacées définitivement avec leurs photos</td></tr>
+              <tr><td>Sauvegardes automatiques sur le téléphone</td><td>Les 7 dernières (une par jour) ; elles peuvent donc contenir une donnée effacée depuis moins de 7 jours</td></tr>
               <tr><td>Fichiers de sauvegarde que tu as envoyés</td><td>Selon ce que tu en fais : ils sont hors de l'application</td></tr>
             </tbody>
           </table>
         </div>
+        <p>La corbeille sert à rattraper une erreur de saisie : une opération supprimée ne compte
+          plus dans le solde, mais elle reste gardée 30 jours avant d'être effacée.</p>
         <p><strong>Désinstaller Hanout efface toutes ses données</strong> du téléphone. Seuls
           restent les fichiers de sauvegarde que tu as envoyés ailleurs, et la copie Android dans
           ton compte Google si elle est activée.</p>
@@ -507,6 +506,8 @@
             les autres applications ne peuvent pas les lire.</li>
           <li>Avant toute restauration, l'application vérifie le fichier et met de côté une copie
             de l'état actuel. Un fichier abîmé ne modifie rien.</li>
+          <li>La copie automatique d'Android vers ton compte Google n'est faite que chiffrée de
+            bout en bout (Android 12 et plus).</li>
           <li>Les montants sont calculés par l'application à partir des opérations, jamais saisis
             à la main.</li>
         </ul>
@@ -530,7 +531,7 @@
 
       <section id="contact">
         <h2 class="sec"><span class="num">12</span>Contact</h2>
-        <p><strong>Tatbikat free</strong> — <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
+        <p><strong>Ali Khalil</strong>, Rabat, Maroc — <a href="mailto:tatbikat.free@gmail.com">tatbikat.free@gmail.com</a></p>
       </section>
 
       <footer class="pied">
